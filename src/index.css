@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+   themes: cupcake --default, dark --prefersdark  ;
+    logs: true;
+    /* include : select;  */
+    /* it only includes the components you list. By listing only select? */
+ }
+
+
+:root{
+  margin : 0;
+  box-sizing: border-box;
+  font-family: Mona-Sans , Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+html, body {
+  min-height: 100vh;
+  /* Removeed height: 100vh; */
+}
+
+ select {
+    background-color: var(--color-base-100);
+    padding: 5px;
+    color: var(--color-base-content);
+    border-radius: 100rem;
+}
+
+
+ body{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    background-color: var(--color-base-100);
+  }
+
+
+
+/* TAILWIND CSS DIRECTIVES  */
+  @theme{
+    --nav-height : 5rem;
+    --header-height : calc(100vh - 5rem);
+    --container-width : 90vw;
+
+    --breakpoint-xl: 1000px;          
+    --breakpoint-xxl: 1300px;
+    --nav-bg-color: var(--color-amber-100)
+    }
+  
+  @layer components{
+
+  .nav {
+    height: var(--nav-height);
+    position: fixed;
+    transition: all .5s;  
+  }
+  
+  .fixed_nav{
+    position: fixed;
+    background-color: inherit;
+  }
+
+  .header{
+    height: var(--header-height);
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities{
+ .link{
+    text-decoration-line: none;
+  }
+}
+  .link::after{
+    content : '';
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    background-color: black;
+    height: .25rem;
+    animation: animation 1s ease-in forwards;
+}
+
+.testimonial , .exp_test{
+  height: 15rem;
+}
+
+  @keyframes animation {
+    0% {
+      width: 0;
+    }
+    70%{
+      width: 100%;
+    }
+    100%{
+      width: 100%;
+    }
+  } 
+
+
+.animation{
+  animation: moving_copywright 5000ms infinite cubic-bezier(0.9, 0.1, 0.3, 0.99);
+  transform: translate3d(0, 0, 0);
+} 
+
+@keyframes moving_copywright {
+  0% {
+    transform: translateY(0px);
+  }
+  5%{
+    transform: translateY(0px);
+  }
+  23%{
+        transform: translateY(-27%);
+  }
+  46% {
+    transform: translateY(-53%);
+  } 
+
+  69%{
+    transform: translateY(-80%);
+  } 
+
+
+}
+
+@media (min-width : 1350px) {
+ 
+  
+}
+
